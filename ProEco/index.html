@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro Eco-Connect - Sustainable Farming Marketplace</title>
+    <title>Pro Eco-Connect - Farmers to Consumers Marketplace</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
     <style>
         .hero-bg {
             background-image: url('http://static.photos/agriculture/1200x630/5');
@@ -19,29 +20,47 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        .category-card:hover img {
-            transform: scale(1.05);
+        .location-pin {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        #vanta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-green-800 text-white shadow-lg">
+    <nav class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <i data-feather="sun" class="text-yellow-300"></i>
+                <i data-feather="map-pin" class="text-yellow-300"></i>
                 <a href="#" class="text-xl font-bold">Pro Eco-Connect</a>
             </div>
             <div class="hidden md:flex space-x-6">
                 <a href="#" class="hover:text-yellow-300">Home</a>
-                <a href="#products" class="hover:text-yellow-300">Products</a>
-                <a href="#categories" class="hover:text-yellow-300">Categories</a>
-                <a href="#about" class="hover:text-yellow-300">About</a>
+                <a href="#how-it-works" class="hover:text-yellow-300">How It Works</a>
+                <a href="#farmers" class="hover:text-yellow-300">Farmers</a>
+                <a href="#consumers" class="hover:text-yellow-300">Consumers</a>
                 <a href="#contact" class="hover:text-yellow-300">Contact</a>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="#" class="hover:text-yellow-300"><i data-feather="shopping-cart"></i></a>
-                <a href="#" class="hover:text-yellow-300"><i data-feather="user"></i></a>
+                <button class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-2 px-4 rounded-full flex items-center">
+                    <i data-feather="user" class="mr-1"></i> Sign In
+                </button>
                 <button class="md:hidden focus:outline-none">
                     <i data-feather="menu"></i>
                 </button>
@@ -51,186 +70,207 @@
 
     <!-- Hero Section -->
     <section class="hero-bg text-white py-20 md:py-32 relative">
+        <div id="vanta-bg"></div>
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Sustainable Farming Solutions</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Connecting farmers with eco-friendly agricultural products and tools</p>
-            <a href="#products" class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-3 px-8 rounded-full inline-flex items-center transition duration-300">
-                Shop Now <i data-feather="arrow-right" class="ml-2"></i>
-            </a>
+        <div class="container mx-auto px-4 hero-content text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Farm to Table, Simplified</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Connecting local farmers directly with large consumers through location-based matching</p>
+            
+            <div class="max-w-2xl mx-auto bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 mb-8">
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-1 relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-feather="search" class="text-gray-400"></i>
+                        </div>
+                        <input type="text" placeholder="What are you looking for?" class="w-full pl-10 pr-4 py-3 rounded-lg bg-white bg-opacity-90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    <div class="flex-1 relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-feather="map-pin" class="text-gray-400"></i>
+                        </div>
+                        <input type="text" placeholder="Enter your location" class="w-full pl-10 pr-4 py-3 rounded-lg bg-white bg-opacity-90 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                    </div>
+                    <button class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-3 px-6 rounded-lg flex items-center justify-center">
+                        <i data-feather="arrow-right" class="mr-2"></i> Find Farms
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="flex items-center bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <i data-feather="check-circle" class="text-yellow-300 mr-2"></i>
+                    <span>Fresh Produce</span>
+                </div>
+                <div class="flex items-center bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <i data-feather="check-circle" class="text-yellow-300 mr-2"></i>
+                    <span>Local Farmers</span>
+                </div>
+                <div class="flex items-center bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <i data-feather="check-circle" class="text-yellow-300 mr-2"></i>
+                    <span>Bulk Orders</span>
+                </div>
+                <div class="flex items-center bg-white bg-opacity-20 px-4 py-2 rounded-full">
+                    <i data-feather="check-circle" class="text-yellow-300 mr-2"></i>
+                    <span>Direct Delivery</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-16 bg-white">
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-white">
         <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">How FarmConnect Works</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">A simple process connecting farmers with large consumers</p>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="truck" class="text-green-700 w-8 h-8"></i>
+                <div class="text-center p-6 rounded-lg border border-gray-200" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="text-xl font-bold">1</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Fast Delivery</h3>
-                    <p class="text-gray-600">Get your products delivered to your farm within 2-3 business days</p>
+                    <h3 class="text-xl font-bold mb-2">Farmers List Products</h3>
+                    <p class="text-gray-600">Local farmers upload their available produce with quantity, quality, and pricing details</p>
                 </div>
-                <div class="text-center p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="shield" class="text-green-700 w-8 h-8"></i>
+                <div class="text-center p-6 rounded-lg border border-gray-200" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-green-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="text-xl font-bold">2</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Quality Guaranteed</h3>
-                    <p class="text-gray-600">All our products are tested and approved by agricultural experts</p>
+                    <h3 class="text-xl font-bold mb-2">Consumers Find Nearby</h3>
+                    <p class="text-gray-600">Restaurants, markets, and bulk buyers discover local farms through our location-based search</p>
                 </div>
-                <div class="text-center p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
-                        <i data-feather="headphones" class="text-green-700 w-8 h-8"></i>
+                <div class="text-center p-6 rounded-lg border border-gray-200" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-green-100 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="text-xl font-bold">3</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
-                    <p class="text-gray-600">Our agricultural specialists are always ready to assist you</p>
+                    <h3 class="text-xl font-bold mb-2">Direct Transactions</h3>
+                    <p class="text-gray-600">Secure platform for direct communication, ordering, and logistics coordination</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-16 bg-gray-50">
+    <!-- For Farmers Section -->
+    <section id="farmers" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Products</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Browse our selection of premium farming products</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Product 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="http://static.photos/agriculture/640x360/1" alt="Organic Seeds" class="w-full h-full object-cover transition duration-500">
-                        <div class="absolute top-2 right-2 bg-yellow-500 text-xs font-bold px-2 py-1 rounded-full">NEW</div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-bold text-lg">Organic Tomato Seeds</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">In Stock</span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-3">High-yield, disease-resistant variety</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-green-700">$4.99</span>
-                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center">
-                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i> Add
-                            </button>
-                        </div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="http://static.photos/agriculture/640x360/20" alt="Farmer" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">For Farmers</h2>
+                    <p class="text-gray-600 mb-6">Expand your market reach without the middlemen. Sell directly to restaurants, grocery chains, and food processors in your area.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-600 mr-3 mt-1"></i>
+                            <span>Reach more buyers in your local area</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-600 mr-3 mt-1"></i>
+                            <span>Set your own prices and terms</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-600 mr-3 mt-1"></i>
+                            <span>Manage inventory and orders easily</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-600 mr-3 mt-1"></i>
+                            <span>Get paid securely and on time</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg flex items-center">
+                            <i data-feather="user-plus" class="mr-2"></i> Sign Up as Farmer
+                        </button>
+                        <button class="border border-green-600 text-green-600 hover:bg-green-50 font-bold py-3 px-6 rounded-lg flex items-center">
+                            <i data-feather="play" class="mr-2"></i> Watch Demo
+                        </button>
                     </div>
                 </div>
-                
-                <!-- Product 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="http://static.photos/agriculture/640x360/2" alt="Fertilizer" class="w-full h-full object-cover transition duration-500">
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-bold text-lg">Organic Fertilizer</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">In Stock</span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-3">25kg bag, NPK 5-3-4</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-green-700">$29.99</span>
-                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center">
-                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="http://static.photos/agriculture/640x360/3" alt="Irrigation System" class="w-full h-full object-cover transition duration-500">
-                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">SALE</div>
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-bold text-lg">Drip Irrigation Kit</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">In Stock</span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-3">Complete 50m setup with timer</p>
-                        <div class="flex justify-between items-center">
-                            <div>
-                                <span class="font-bold text-green-700">$89.99</span>
-                                <span class="text-sm text-gray-500 line-through ml-2">$109.99</span>
-                            </div>
-                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center">
-                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300" data-aos="fade-up" data-aos-delay="400">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="http://static.photos/agriculture/640x360/4" alt="Garden Tools" class="w-full h-full object-cover transition duration-500">
-                    </div>
-                    <div class="p-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-bold text-lg">Professional Pruner</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">In Stock</span>
-                        </div>
-                        <p class="text-gray-600 text-sm mb-3">Stainless steel, ergonomic design</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-green-700">$24.99</span>
-                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center">
-                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i> Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-10">
-                <a href="#" class="inline-block border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300">
-                    View All Products
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories" class="py-16 bg-white">
+    <!-- For Consumers Section -->
+    <section id="consumers" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="http://static.photos/food/640x360/15" alt="Restaurant" class="rounded-xl shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">For Consumers</h2>
+                    <p class="text-gray-600 mb-6">Source fresh, local produce directly from farmers in your area. Perfect for restaurants, caterers, grocery stores, and institutions.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-600 mr-3 mt-1"></i>
+                            <span>Find the freshest local produce</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-600 mr-3 mt-1"></i>
+                            <span>Bulk purchasing options available</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-600 mr-3 mt-1"></i>
+                            <span>Transparent pricing and farm details</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="text-green-600 mr-3 mt-1"></i>
+                            <span>Schedule regular deliveries</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg flex items-center">
+                            <i data-feather="shopping-bag" class="mr-2"></i> Browse Farms
+                        </button>
+                        <button class="border border-green-600 text-green-600 hover:bg-green-50 font-bold py-3 px-6 rounded-lg flex items-center">
+                            <i data-feather="dollar-sign" class="mr-2"></i> Pricing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Map Section -->
+    <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Shop by Category</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Find exactly what you need for your farm</p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Find Farms Near You</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our platform connects you with local farmers based on your location</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="#" class="category-card block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-40">
-                        <img src="http://static.photos/agriculture/640x360/10" alt="Seeds" class="w-full h-full object-cover transition duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-                            <h3 class="text-white font-bold text-xl">Seeds</h3>
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+                <div class="h-96 relative">
+                    <!-- Map placeholder - would be replaced with actual map implementation -->
+                    <div class="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                        <div class="text-center">
+                            <i data-feather="map" class="w-16 h-16 text-gray-400 mx-auto mb-4"></i>
+                            <p class="text-gray-600">Interactive map showing nearby farms</p>
                         </div>
                     </div>
-                </a>
-                <a href="#" class="category-card block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative h-40">
-                        <img src="http://static.photos/agriculture/640x360/11" alt="Fertilizers" class="w-full h-full object-cover transition duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-                            <h3 class="text-white font-bold text-xl">Fertilizers</h3>
-                        </div>
+                    <!-- Location pin -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 location-pin">
+                        <i data-feather="map-pin" class="w-10 h-10 text-red-500 fill-current"></i>
                     </div>
-                </a>
-                <a href="#" class="category-card block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="relative h-40">
-                        <img src="http://static.photos/agriculture/640x360/12" alt="Tools" class="w-full h-full object-cover transition duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-                            <h3 class="text-white font-bold text-xl">Tools</h3>
+                    <!-- Farm markers would be added here dynamically -->
+                </div>
+                <div class="p-6 border-t border-gray-200">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-lg">Showing farms within 50km of your location</h3>
+                            <p class="text-gray-600">32 farms available</p>
                         </div>
+                        <button class="mt-4 md:mt-0 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg flex items-center">
+                            <i data-feather="filter" class="mr-2"></i> Filter Results
+                        </button>
                     </div>
-                </a>
-                <a href="#" class="category-card block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="400">
-                    <div class="relative h-40">
-                        <img src="http://static.photos/agriculture/640x360/13" alt="Irrigation" class="w-full h-full object-cover transition duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-                            <h3 class="text-white font-bold text-xl">Irrigation</h3>
-                        </div>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -239,82 +279,75 @@
     <section class="py-16 bg-green-800 text-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">What Farmers Say</h2>
-                <p class="max-w-2xl mx-auto">Trusted by thousands of farmers across the country</p>
+                <h2 class="text-3xl font-bold mb-4">Success Stories</h2>
+                <p class="max-w-2xl mx-auto">Hear from farmers and buyers who have transformed their businesses with FarmConnect</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-green-700 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="http://static.photos/people/200x200/1" alt="John Farmer" class="w-full h-full object-cover">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="http://static.photos/people/200x200/10" alt="Farmer" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold">John Farmer</h4>
-                            <p class="text-green-200 text-sm">Organic Farm, California</p>
+                            <h4 class="font-bold">Robert Johnson</h4>
+                            <p class="text-green-200">Organic Vegetable Farmer</p>
                         </div>
                     </div>
-                    <p class="italic">"The organic seeds I bought from AgriGrow produced the best yield I've ever had. Highly recommended!"</p>
-                    <div class="flex mt-4 text-yellow-300">
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    <p class="italic mb-4">"Since joining FarmConnect, I've doubled my customer base without increasing my marketing budget. The platform makes it so easy to connect with restaurants and grocery stores in my area."</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-300">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <div class="text-green-200 text-sm">
+                            <i data-feather="calendar" class="inline mr-1 w-4 h-4"></i> Joined 8 months ago
+                        </div>
                     </div>
                 </div>
                 <div class="bg-green-700 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="http://static.photos/people/200x200/2" alt="Sarah Grower" class="w-full h-full object-cover">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="http://static.photos/people/200x200/11" alt="Chef" class="w-full h-full object-cover">
                         </div>
                         <div>
-                            <h4 class="font-bold">Sarah Grower</h4>
-                            <p class="text-green-200 text-sm">Family Farm, Texas</p>
+                            <h4 class="font-bold">Maria Gonzalez</h4>
+                            <p class="text-green-200">Restaurant Owner</p>
                         </div>
                     </div>
-                    <p class="italic">"Their customer service is outstanding. Helped me choose the perfect irrigation system for my farm."</p>
-                    <div class="flex mt-4 text-yellow-300">
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                </div>
-                <div class="bg-green-700 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="http://static.photos/people/200x200/3" alt="Mike Cultivator" class="w-full h-full object-cover">
+                    <p class="italic mb-4">"Finding reliable local suppliers used to take so much time. Now with FarmConnect, I can source 80% of our produce from within 30 miles, and the quality is consistently excellent."</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-300">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold">Mike Cultivator</h4>
-                            <p class="text-green-200 text-sm">Vineyard, Oregon</p>
+                        <div class="text-green-200 text-sm">
+                            <i data-feather="calendar" class="inline mr-1 w-4 h-4"></i> Customer for 1 year
                         </div>
-                    </div>
-                    <p class="italic">"Fast delivery and quality products. I've been a loyal customer for 3 years now."</p>
-                    <div class="flex mt-4 text-yellow-300">
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
-                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="py-16 bg-gray-100">
+    <!-- CTA Section -->
+    <section class="py-16 bg-yellow-500 text-green-900">
         <div class="container mx-auto px-4 text-center" data-aos="fade-up">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Stay Updated</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-8">Subscribe to our newsletter for farming tips, new products, and exclusive offers</p>
-            <form class="max-w-md mx-auto flex">
-                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
-                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-r-lg font-bold transition duration-300">
-                    Subscribe
+            <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Farm Business?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join thousands of farmers and buyers already benefiting from direct connections</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="bg-green-800 hover:bg-green-900 text-white font-bold py-3 px-8 rounded-full flex items-center justify-center">
+                    <i data-feather="user-plus" class="mr-2"></i> Sign Up as Farmer
                 </button>
-            </form>
+                <button class="bg-white hover:bg-gray-100 text-green-900 font-bold py-3 px-8 rounded-full flex items-center justify-center">
+                    <i data-feather="shopping-bag" class="mr-2"></i> Browse Farms
+                </button>
+            </div>
         </div>
     </section>
 
@@ -324,43 +357,40 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4 flex items-center">
-                        <i data-feather="sun" class="text-yellow-300 mr-2"></i> Pro Eco-Connect
+                        <i data-feather="map-pin" class="text-yellow-300 mr-2"></i> Pro Eco-Connect
                     </h3>
                     <p class="text-gray-400 mb-4">Connecting sustainable farming solutions since 2015.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
                         <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="youtube"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <h4 class="font-bold text-lg mb-4">Farmers</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
-                        <li><a href="#categories" class="text-gray-400 hover:text-white">Categories</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Farmer Resources</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Customer Service</h4>
+                    <h4 class="font-bold text-lg mb-4">Buyers</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">My Account</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Order Tracking</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Wishlist</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Returns & Refunds</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Find Farms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bulk Ordering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Delivery Options</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Quality Standards</a></li>
                     </ul>
                 </div>
                 <div id="contact">
                     <h4 class="font-bold text-lg mb-4">Contact Us</h4>
                     <ul class="space-y-2">
-                        <li class="flex items-center text-gray-400"><i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 123 Farm Road, Agricultural City</li>
-                        <li class="flex items-center text-gray-400"><i data-feather="mail" class="mr-2 w-4 h-4"></i> info@agrigrow.com</li>
-                        <li class="flex items-center text-gray-400"><i data-feather="phone" class="mr-2 w-4 h-4"></i> +1 (555) 123-4567</li>
-                        <li class="flex items-center text-gray-400"><i data-feather="clock" class="mr-2 w-4 h-4"></i> Mon-Fri: 8AM - 6PM</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="mail" class="mr-2 w-4 h-4"></i> info@proecoconnect.com</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="phone" class="mr-2 w-4 h-4"></i> (800) 555-1234</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="map" class="mr-2 w-4 h-4"></i> 123 Farm Tech Way, CA</li>
                     </ul>
                 </div>
             </div>
@@ -369,7 +399,7 @@
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
                     <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">FAQ</a>
                 </div>
             </div>
         </div>
@@ -382,6 +412,20 @@
             once: true
         });
         feather.replace();
+        
+        // Initialize Vanta.js background
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3a9b4a,
+            backgroundColor: 0x0
+        });
     </script>
 </body>
 </html>
