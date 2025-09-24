@@ -1,311 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ProEcoConnect.co.za</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-
-    /* Chat Widget */
-.chat-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-
-.chat-icon {
-  background-color: #00e676;
-  color: #00332e;
-  padding: 12px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 24px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.chat-box {
-  display: none;
-  flex-direction: column;
-  width: 300px;
-  height: 400px;
-  background-color: #ffffff;
-  color: #000;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-}
-
-.chat-header {
-  background-color: #00332e;
-  color: #fff;
-  padding: 12px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.close-chat {
-  cursor: pointer;
-}
-
-.chat-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  background-color: #f5f5f5;
-}
-
-.message {
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 6px;
-  max-width: 80%;
-}
-
-.message.bot {
-  background-color: #e0e0e0;
-  align-self: flex-start;
-}
-
-.message.user {
-  background-color: #c8e6c9;
-  align-self: flex-end;
-  text-align: right;
-}
-
-.chat-box form {
-  display: flex;
-  border-top: 1px solid #ccc;
-}
-
-.chat-box input {
-  flex: 1;
-  border: none;
-  padding: 10px;
-  font-size: 14px;
-}
-
-.chat-box button {
-  background-color: #00e676;
-  border: none;
-  padding: 10px 14px;
-  cursor: pointer;
-}
-
-    body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #00332e;
-  color: white;
-}
-
-/* Top nav */
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #002e28;
-  color: white;
-}
-
-.login-btn {
-  background-color: #00e676;
-  color: #00332e;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-/* Login Page */
-.login-container {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 30px;
-  background-color: #004d40;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  color: white;
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.login-container form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-container label {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.login-container input,
-.login-container select {
-  padding: 10px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-}
-
-.login-container button {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #00e676;
-  color: #00332e;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-.top-banner {
-  background-color: #005347;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.top-banner a {
-  color: #00e676;
-  text-decoration: underline;
-}
-
-.hero {
-  background-image: url('fruits.jpg'); /* Replace with actual image */
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay {
-  background: rgba(0, 51, 46, 0.6);
-  padding: 40px;
-  text-align: center;
-  width: 100%;
-}
-
-.logo {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #ffffff;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  font-size: 20px;
-  color: #e0e0e0;
-}
-
-.features {
-  display: flex;
-  justify-content: space-around;
-  padding: 40px 20px;
-  background-color: #00332e;
-}
-
-.feature h2 {
-  font-size: 20px;
-  color: white;
-}
-
-.feature p {
-  font-size: 14px;
-  color: #c0c0c0;
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriGrow - Farming Products Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .hero-bg {
+            background-image: url('http://static.photos/agriculture/1200x630/5');
+            background-size: cover;
+            background-position: center;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<div class="chat-widget">
-  <div class="chat-icon" onclick="toggleChat()">💬</div>
-  <div class="chat-box" id="chatBox">
-    <div class="chat-header">
-      Chat with Us
-      <span onclick="toggleChat()" class="close-chat">✖</span>
-    </div>
-    <div class="chat-messages" id="chatMessages">
-      <div class="message bot">Hi! How can we help you today?</div>
-    </div>
-    <form onsubmit="sendMessage(event)">
-      <input type="text" id="chatInput" placeholder="Type your message..." required />
-      <button type="submit">Send</button>
-    </form>
-  </div>
-</div>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-green-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="sun" class="text-yellow-300"></i>
+                <a href="#" class="text-xl font-bold">AgriGrow</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-yellow-300">Home</a>
+                <a href="#products" class="hover:text-yellow-300">Products</a>
+                <a href="#categories" class="hover:text-yellow-300">Categories</a>
+                <a href="#about" class="hover:text-yellow-300">About</a>
+                <a href="#contact" class="hover:text-yellow-300">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-yellow-300"><i data-feather="shopping-cart"></i></a>
+                <a href="#" class="hover:text-yellow-300"><i data-feather="user"></i></a>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Quality Farming Products</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Discover the best agricultural tools, seeds, and equipment for your farm</p>
+            <a href="#products" class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-3 px-8 rounded-full inline-flex items-center transition duration-300">
+                Shop Now <i data-feather="arrow-right" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
 
-<body>
-  <div class="top-banner">
-    The next South African agri App, reaching new markets and helping farmers! <a href="#">Read more</a>
-  </div>
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="truck" class="text-green-700 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600">Get your products delivered to your farm within 2-3 business days</p>
+                </div>
+                <div class="text-center p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="shield" class="text-green-700 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Quality Guaranteed</h3>
+                    <p class="text-gray-600">All our products are tested and approved by agricultural experts</p>
+                </div>
+                <div class="text-center p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i data-feather="headphones" class="text-green-700 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                    <p class="text-gray-600">Our agricultural specialists are always ready to assist you</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Add inside <body> -->
-<nav class="top-nav">
-  <div class="nav-left">
-    <span class="logo">ProEco Connect!</span>
-  </div>
-  <div class="nav-right">
-    <a href="login.html" class="login-btn">Login</a>
-  </div>
-</nav>
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Browse our selection of premium farming products</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="http://static.photos/agriculture/640x360/1" alt="Organic Seeds" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute top-2 right-2 bg-yellow-500 text-xs font-bold px-2 py-1 rounded-full">NEW</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Organic Tomato Seeds</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">In Stock</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">High-yield, disease-resistant variety</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-700">$4.99</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="http://static.photos/agriculture/640x360/2" alt="Fertilizer" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Organic Fertilizer</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">In Stock</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">25kg bag, NPK 5-3-4</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-700">$29.99</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="http://static.photos/agriculture/640x360/3" alt="Irrigation System" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">SALE</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Drip Irrigation Kit</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">In Stock</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Complete 50m setup with timer</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-green-700">$89.99</span>
+                                <span class="text-sm text-gray-500 line-through ml-2">$109.99</span>
+                            </div>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md product-card transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="http://static.photos/agriculture/640x360/4" alt="Garden Tools" class="w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Professional Pruner</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">In Stock</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-3">Stainless steel, ergonomic design</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-green-700">$24.99</span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                                <i data-feather="shopping-cart" class="w-4 h-4 mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Shop by Category</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find exactly what you need for your farm</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#" class="category-card block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-40">
+                        <img src="http://static.photos/agriculture/640x360/10" alt="Seeds" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white font-bold text-xl">Seeds</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="category-card block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-40">
+                        <img src="http://static.photos/agriculture/640x360/11" alt="Fertilizers" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white font-bold text-xl">Fertilizers</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="category-card block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-40">
+                        <img src="http://static.photos/agriculture/640x360/12" alt="Tools" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white font-bold text-xl">Tools</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="category-card block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-40">
+                        <img src="http://static.photos/agriculture/640x360/13" alt="Irrigation" class="w-full h-full object-cover transition duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white font-bold text-xl">Irrigation</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <header class="hero">
-    <div class="overlay">
-      <nav class="logo">ProEco Connect!</nav>
-      <div class="hero-content">
-        <h1>Smart farming starts here</h1>
-        <p>Trade smarter, fund faster, and grow bigger with ProEco Connect.</p>
-      </div>
-    </div>
-  </header>
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-green-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">What Farmers Say</h2>
+                <p class="max-w-2xl mx-auto">Trusted by thousands of farmers across the country</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-green-700 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="http://static.photos/people/200x200/1" alt="John Farmer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">John Farmer</h4>
+                            <p class="text-green-200 text-sm">Organic Farm, California</p>
+                        </div>
+                    </div>
+                    <p class="italic">"The organic seeds I bought from AgriGrow produced the best yield I've ever had. Highly recommended!"</p>
+                    <div class="flex mt-4 text-yellow-300">
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="http://static.photos/people/200x200/2" alt="Sarah Grower" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Grower</h4>
+                            <p class="text-green-200 text-sm">Family Farm, Texas</p>
+                        </div>
+                    </div>
+                    <p class="italic">"Their customer service is outstanding. Helped me choose the perfect irrigation system for my farm."</p>
+                    <div class="flex mt-4 text-yellow-300">
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="http://static.photos/people/200x200/3" alt="Mike Cultivator" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Mike Cultivator</h4>
+                            <p class="text-green-200 text-sm">Vineyard, Oregon</p>
+                        </div>
+                    </div>
+                    <p class="italic">"Fast delivery and quality products. I've been a loyal customer for 3 years now."</p>
+                    <div class="flex mt-4 text-yellow-300">
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="features">
-    <div class="feature">
-      <h2>ProEco Connect for Farmers</h2>
-      <p>Products to grow your business</p>
-    </div>
-    <div class="feature">
-      <h2>ProEco for Traders</h2>
-      <p>Source trade and contract crops</p>
-    </div>
-    <div class="feature">
-      <h2>ProEco for Partners</h2>
-      <p>Access the power of our network</p>
-    </div>
-  </section>
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Stay Updated</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">Subscribe to our newsletter for farming tips, new products, and exclusive offers</p>
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-r-lg font-bold transition duration-300">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
 
-  <section style="margin-top: 200px;">
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-feather="sun" class="text-yellow-300 mr-2"></i> AgriGrow
+                    </h3>
+                    <p class="text-gray-400 mb-4">Your trusted partner for quality farming products since 2010.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
+                        <li><a href="#categories" class="text-gray-400 hover:text-white">Categories</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">My Account</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Order Tracking</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Wishlist</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div id="contact">
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400"><i data-feather="map-pin" class="mr-2 w-4 h-4"></i> 123 Farm Road, Agricultural City</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="mail" class="mr-2 w-4 h-4"></i> info@agrigrow.com</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="phone" class="mr-2 w-4 h-4"></i> +1 (555) 123-4567</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="clock" class="mr-2 w-4 h-4"></i> Mon-Fri: 8AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 AgriGrow. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <p>testing</p>
-
-  </section>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
