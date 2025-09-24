@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Pro Eco-Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .auth-bg {
+            background-image: url('http://static.photos/agriculture/1200x630/9');
+            background-size: cover;
+            background-position: center;
+        }
+        .auth-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .account-type-btn {
+            transition: all 0.3s ease;
+        }
+        .account-type-btn.active {
+            background-color: #059669;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-green-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="map-pin" class="text-yellow-300"></i>
+                <a href="index.html" class="text-xl font-bold">Pro Eco-Connect</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="signin.html" class="text-white hover:text-yellow-300">Already have an account? Sign In</a>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Auth Section -->
+    <section class="min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-md">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-8">
+                    <div class="text-center mb-8">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-2">Create Account</h1>
+                        <p class="text-gray-600">Join Pro Eco-Connect as a farmer or buyer</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-medium mb-2">I am a:</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button type="button" class="account-type-btn active py-3 px-4 border border-gray-300 rounded-lg font-medium" data-account-type="farmer">
+                                <i data-feather="user" class="mr-2"></i> Farmer
+                            </button>
+                            <button type="button" class="account-type-btn py-3 px-4 border border-gray-300 rounded-lg font-medium" data-account-type="buyer">
+                                <i data-feather="shopping-bag" class="mr-2"></i> Buyer
+                            </button>
+                        </div>
+                    </div>
+
+                    <form>
+                        <div class="mb-4">
+                            <label for="fullname" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-feather="user" class="text-gray-400"></i>
+                                </div>
+                                <input type="text" id="fullname" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="John Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-feather="mail" class="text-gray-400"></i>
+                                </div>
+                                <input type="email" id="email" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-feather="lock" class="text-gray-400"></i>
+                                </div>
+                                <input type="password" id="password" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="••••••••" required>
+                                <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Minimum 8 characters with at least one number</p>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="confirm-password" class="block text-gray-700 font-medium mb-2">Confirm Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-feather="lock" class="text-gray-400"></i>
+                                </div>
+                                <input type="password" id="confirm-password" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="••••••••" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-6 flex items-center">
+                            <input type="checkbox" id="terms" class="w-4 h-4 text-green-600 rounded border-gray-300 focus:ring-green-500" required>
+                            <label for="terms" class="ml-2 block text-gray-700">
+                                I agree to the <a href="#" class="text-green-600 hover:text-green-800">Terms of Service</a> and <a href="#" class="text-green-600 hover:text-green-800">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                            <i data-feather="user-plus" class="mr-2"></i> Create Account
+                        </button>
+
+                        <div class="mt-6 text-center">
+                            <p class="text-gray-600">Or sign up with</p>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <button type="button" class="p-2 border border-gray-300 rounded-full hover:bg-gray-50">
+                                    <i data-feather="facebook" class="text-blue-600"></i>
+                                </button>
+                                <button type="button" class="p-2 border border-gray-300 rounded-full hover:bg-gray-50">
+                                    <i data-feather="google" class="text-red-500"></i>
+                                </button>
+                                <button type="button" class="p-2 border border-gray-300 rounded-full hover:bg-gray-50">
+                                    <i data-feather="linkedin" class="text-blue-700"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="bg-gray-50 px-8 py-4 text-center border-t border-gray-200">
+                    <p class="text-gray-600">Already have an account? <a href="signin.html" class="text-green-600 hover:text-green-800 font-medium">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        feather.replace();
+        
+        // Toggle password visibility
+        document.querySelectorAll('[data-feather="eye"]').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const passwordInput = this.closest('.relative').querySelector('input');
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.setAttribute('data-feather', type === 'password' ? 'eye' : 'eye-off');
+                feather.replace();
+            });
+        });
+
+        // Account type selection
+        document.querySelectorAll('.account-type-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.account-type-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
