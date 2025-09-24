@@ -1,213 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login - Khula</title>
-  <link rel="stylesheet" href="styles.css">
-
-  <style>
-
-    /* Chat Widget */
-.chat-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-
-.chat-icon {
-  background-color: #00e676;
-  color: #00332e;
-  padding: 12px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 24px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.chat-box {
-  display: none;
-  flex-direction: column;
-  width: 300px;
-  height: 400px;
-  background-color: #ffffff;
-  color: #000;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-}
-
-.chat-header {
-  background-color: #00332e;
-  color: #fff;
-  padding: 12px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.close-chat {
-  cursor: pointer;
-}
-
-.chat-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  background-color: #f5f5f5;
-}
-
-.message {
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 6px;
-  max-width: 80%;
-}
-
-.message.bot {
-  background-color: #e0e0e0;
-  align-self: flex-start;
-}
-
-.message.user {
-  background-color: #c8e6c9;
-  align-self: flex-end;
-  text-align: right;
-}
-
-.chat-box form {
-  display: flex;
-  border-top: 1px solid #ccc;
-}
-
-.chat-box input {
-  flex: 1;
-  border: none;
-  padding: 10px;
-  font-size: 14px;
-}
-
-.chat-box button {
-  background-color: #00e676;
-  border: none;
-  padding: 10px 14px;
-  cursor: pointer;
-}
-
-    /* Top nav */
-    body {
-background-image: url('fruits.jpg');
-background-size: cover;
-  background-position: center;
-  height: 80vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-    }
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #002e28;
-  color: white;
-}
-
-.login-btn {
-  background-color: #00e676;
-  color: #00332e;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-/* Login Page */
-.login-container {
-  max-width: 400px;
-  margin: 100px auto;
-  padding: 30px;
-  background-color: #004d40;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  color: white;
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.login-container form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-container label {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.login-container input,
-.login-container select {
-  padding: 10px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-}
-
-.login-container button {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #00e676;
-  color: #00332e;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Pro Eco-Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .auth-bg {
+            background-image: url('http://static.photos/agriculture/1200x630/8');
+            background-size: cover;
+            background-position: center;
+        }
+        .auth-overlay {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-green-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="map-pin" class="text-yellow-300"></i>
+                <a href="index.html" class="text-xl font-bold">Pro Eco-Connect</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="signup.html" class="text-white hover:text-yellow-300">Don't have an account? Sign Up</a>
+            </div>
+        </div>
+    </nav>
 
-<div class="chat-widget">
-  <div class="chat-icon" onclick="toggleChat()">💬</div>
-  <div class="chat-box" id="chatBox">
-    <div class="chat-header">
-      Chat with Us
-      <span onclick="toggleChat()" class="close-chat">✖</span>
-    </div>
-    <div class="chat-messages" id="chatMessages">
-      <div class="message bot">Hi! How can we help you today?</div>
-    </div>
-    <form onsubmit="sendMessage(event)">
-      <input type="text" id="chatInput" placeholder="Type your message..." required />
-      <button type="submit">Send</button>
-    </form>
-  </div>
-</div>
+    <!-- Auth Section -->
+    <section class="min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-md">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="p-8">
+                    <div class="text-center mb-8">
+                        <h1 class="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h1>
+                        <p class="text-gray-600">Sign in to your Pro Eco-Connect account</p>
+                    </div>
 
-<body>
-  <div class="login-container">
-    <h2>Login to ProEco Connect</h2>
-    <form action="dashboard.html" method="post">
-      <label for="role">I am a:</label>
-      <select id="role" name="role" required>
-        <option value="buyer">Buyer</option>
-        <option value="seller">Seller</option>
-      </select>
+                    <form>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-feather="mail" class="text-gray-400"></i>
+                                </div>
+                                <input type="email" id="email" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="your@email.com" required>
+                            </div>
+                        </div>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+                        <div class="mb-6">
+                            <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i data-feather="lock" class="text-gray-400"></i>
+                                </div>
+                                <input type="password" id="password" class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" placeholder="••••••••" required>
+                                <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+                                    <i data-feather="eye" class="w-5 h-5"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-end mt-2">
+                                <a href="forgot-password.html" class="text-sm text-green-600 hover:text-green-800">Forgot password?</a>
+                            </div>
+                        </div>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+                        <div class="mb-6 flex items-center">
+                            <input type="checkbox" id="remember" class="w-4 h-4 text-green-600 rounded border-gray-300 focus:ring-green-500">
+                            <label for="remember" class="ml-2 block text-gray-700">Remember me</label>
+                        </div>
 
-      <button type="submit">Login</button>
-    </form>
-  </div>
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                            <i data-feather="log-in" class="mr-2"></i> Sign In
+                        </button>
+
+                        <div class="mt-6 text-center">
+                            <p class="text-gray-600">Or continue with</p>
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <button type="button" class="p-2 border border-gray-300 rounded-full hover:bg-gray-50">
+                                    <i data-feather="facebook" class="text-blue-600"></i>
+                                </button>
+                                <button type="button" class="p-2 border border-gray-300 rounded-full hover:bg-gray-50">
+                                    <i data-feather="twitter" class="text-blue-400"></i>
+                                </button>
+                                <button type="button" class="p-2 border border-gray-300 rounded-full hover:bg-gray-50">
+                                    <i data-feather="github" class="text-gray-800"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="bg-gray-50 px-8 py-4 text-center border-t border-gray-200">
+                    <p class="text-gray-600">Don't have an account? <a href="signup.html" class="text-green-600 hover:text-green-800 font-medium">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        feather.replace();
+        
+        // Toggle password visibility
+        document.querySelectorAll('[data-feather="eye"]').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const passwordInput = this.closest('.relative').querySelector('input');
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.setAttribute('data-feather', type === 'password' ? 'eye' : 'eye-off');
+                feather.replace();
+            });
+        });
+    </script>
 </body>
 </html>
