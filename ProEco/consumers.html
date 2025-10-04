@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Consumers | Pro Eco-Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .consumer-hero {
+            background-image: url('http://static.photos/food/1200x630/12');
+            background-size: cover;
+            background-position: center;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 128, 0, 0.1);
+        }
+        .seasonal-card {
+            transition: all 0.3s ease;
+        }
+        .seasonal-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="map-pin" class="text-yellow-300"></i>
+                <a href="index.html" class="text-xl font-bold">Pro Eco-Connect</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="about.html" class="hover:text-yellow-300">About Us</a>
+                <a href="services.html" class="hover:text-yellow-300">Services</a>
+                <a href="index.html#how-it-works" class="hover:text-yellow-300">How It Works</a>
+                <a href="farmers.html" class="hover:text-yellow-300">Farmers</a>
+                <a href="consumers.html" class="text-yellow-300">Consumers</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="signin.html" class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-2 px-4 rounded-full flex items-center">
+                    <i data-feather="user" class="mr-1"></i> Sign In
+                </a>
+                <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Consumer Hero Section -->
+    <section class="consumer-hero text-white py-32 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Fresh, Local & Sustainable</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">Discover the best local produce while supporting sustainable farming practices in your community</p>
+            <a href="signin.html" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-3 px-8 rounded-lg">
+                Join Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Consumer Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose Pro Eco-Connect?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="benefit-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="star" class="text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Premium Quality</h3>
+                    <p class="text-gray-600">Get the freshest produce harvested at peak ripeness, often within hours of delivery.</p>
+                </div>
+                
+                <div class="benefit-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="shield" class="text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Transparent Sourcing</h3>
+                    <p class="text-gray-600">Know exactly where your food comes from and how it was grown.</p>
+                </div>
+                
+                <div class="benefit-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i data-feather="heart" class="text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Community Impact</h3>
+                    <p class="text-gray-600">Support local farmers and sustainable agriculture practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Produce Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Seasonal Produce This Month</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="seasonal-card bg-white rounded-lg overflow-hidden shadow-sm" data-aos="fade-up">
+                    <img src="http://static.photos/food/640x360/20" alt="Tomatoes" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Tomatoes</h3>
+                        <p class="text-green-600 mb-2">From 12 local farms</p>
+                        <p class="text-gray-600 text-sm">Peak season: Nov - Mar</p>
+                    </div>
+                </div>
+                
+                <div class="seasonal-card bg-white rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/food/640x360/21" alt="Avocados" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Avocados</h3>
+                        <p class="text-green-600 mb-2">From 8 local farms</p>
+                        <p class="text-gray-600 text-sm">Peak season: All year</p>
+                    </div>
+                </div>
+                
+                <div class="seasonal-card bg-white rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/food/640x360/22" alt="Berries" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Berries</h3>
+                        <p class="text-green-600 mb-2">From 15 local farms</p>
+                        <p class="text-gray-600 text-sm">Peak season: Oct - Feb</p>
+                    </div>
+                </div>
+                
+                <div class="seasonal-card bg-white rounded-lg overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/food/640x360/23" alt="Leafy Greens" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1">Leafy Greens</h3>
+                        <p class="text-green-600 mb-2">From 20 local farms</p>
+                        <p class="text-gray-600 text-sm">Peak season: All year</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="farmers.html" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg">
+                    Browse All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Order Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">How To Order</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up">
+                    <div class="flex items-center justify-center bg-green-100 w-16 h-16 rounded-full mb-6 mx-auto">
+                        <span class="text-green-800 font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Create Your Account</h3>
+                    <p class="text-gray-600 text-center">Sign up as a consumer to start browsing local farms and products.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-center bg-green-100 w-16 h-16 rounded-full mb-6 mx-auto">
+                        <span class="text-green-800 font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Browse & Select</h3>
+                    <p class="text-gray-600 text-center">Explore farms near you and add products to your cart.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-center bg-green-100 w-16 h-16 rounded-full mb-6 mx-auto">
+                        <span class="text-green-800 font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Checkout & Enjoy</h3>
+                    <p class="text-gray-600 text-center">Choose delivery or pickup and enjoy fresh, local produce!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What Our Customers Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center text-yellow-500 mr-2">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"The quality of produce from Pro Eco-Connect is unmatched. I can taste the difference!"</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/4" alt="Customer" class="w-10 h-10 rounded-full mr-3">
+                        <span class="text-sm text-gray-600">Sarah J., Customer since 2022</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center text-yellow-500 mr-2">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"I love knowing exactly where my food comes from and supporting local farmers."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/5" alt="Customer" class="w-10 h-10 rounded-full mr-3">
+                        <span class="text-sm text-gray-600">Michael T., Customer since 2021</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <div class="flex items-center text-yellow-500 mr-2">
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">"The convenience of home delivery combined with farm-fresh quality is unbeatable."</p>
+                    <div class="flex items-center">
+                        <img src="http://static.photos/people/200x200/6" alt="Customer" class="w-10 h-10 rounded-full mr-3">
+                        <span class="text-sm text-gray-600">Lisa M., Customer since 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-feather="map-pin" class="text-yellow-300 mr-2"></i> Pro Eco-Connect
+                    </h3>
+                    <p class="text-gray-400 mb-4">Connecting sustainable farming solutions since 2023.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Farmers</h4>
+                    <ul class="space-y-2">
+                        <li><a href="farmers.html" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Farmer Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Consumers</h4>
+                    <ul class="space-y-2">
+                        <li><a href="consumers.html" class="text-gray-400 hover:text-white">Benefits</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Seasonal Produce</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Delivery Options</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Quality Standards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400"><i data-feather="mail" class="mr-2 w-4 h-4"></i> info@proecoconnect.com</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="phone" class="mr-2 w-4 h-4"></i> (800) 555-1234</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="map" class="mr-2 w-4 h-4"></i> Johannesburg, South Africa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Pro Eco-Connect. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white text-sm">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
