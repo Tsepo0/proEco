@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Pro Eco-Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .contact-hero {
+            background-image: url('http://static.photos/agriculture/1200x630/8');
+            background-size: cover;
+            background-position: center;
+        }
+        .floating-input:focus-within label,
+        .floating-input input:not(:placeholder-shown) + label,
+        .floating-input textarea:not(:placeholder-shown) + label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: #065f46;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 128, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="map-pin" class="text-yellow-300"></i>
+                <a href="index.html" class="text-xl font-bold">Pro Eco-Connect</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="about.html" class="hover:text-yellow-300">About Us</a>
+                <a href="index.html#how-it-works" class="hover:text-yellow-300">How It Works</a>
+                <a href="index.html#farmers" class="hover:text-yellow-300">Farmers</a>
+                <a href="index.html#consumers" class="hover:text-yellow-300">Consumers</a>
+                <a href="contact.html" class="text-yellow-300">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="signin.html" class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-2 px-4 rounded-full flex items-center">
+                    <i data-feather="user" class="mr-1"></i> Sign In
+                </a>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero text-white py-20 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
+            <p class="text-xl max-w-2xl mx-auto">We'd love to hear from you! Whether you're a farmer looking to join or a buyer with questions, our team is here to help.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Form -->
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h2>
+                    
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="floating-input relative">
+                                <input type="text" id="firstname" placeholder=" " class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                                <label for="firstname" class="absolute left-4 top-3 text-gray-500 transition-all duration-200">First Name</label>
+                            </div>
+                            <div class="floating-input relative">
+                                <input type="text" id="lastname" placeholder=" " class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                                <label for="lastname" class="absolute left-4 top-3 text-gray-500 transition-all duration-200">Last Name</label>
+                            </div>
+                        </div>
+                        
+                        <div class="floating-input relative">
+                            <input type="email" id="email" placeholder=" " class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                            <label for="email" class="absolute left-4 top-3 text-gray-500 transition-all duration-200">Email Address</label>
+                        </div>
+                        
+                        <div class="floating-input relative">
+                            <input type="tel" id="phone" placeholder=" " class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent">
+                            <label for="phone" class="absolute left-4 top-3 text-gray-500 transition-all duration-200">Phone Number</label>
+                        </div>
+                        
+                        <div class="relative">
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg appearance-none focus:ring-2 focus:ring-green-600 focus:border-transparent bg-white">
+                                <option value="" disabled selected>Select Inquiry Type</option>
+                                <option>Farmer Registration</option>
+                                <option>Buyer Account</option>
+                                <option>Technical Support</option>
+                                <option>General Question</option>
+                                <option>Partnership</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <i data-feather="chevron-down" class="text-gray-500"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="floating-input relative">
+                            <textarea id="message" rows="4" placeholder=" " class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"></textarea>
+                            <label for="message" class="absolute left-4 top-3 text-gray-500 transition-all duration-200">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center">
+                            <i data-feather="send" class="mr-2"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Information</h2>
+                    <p class="text-gray-600 mb-8">Reach out to us through any of these channels. Our support team is available Monday to Friday, 8am to 6pm.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="contact-card bg-gray-50 p-6 rounded-lg transition-all duration-300">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i data-feather="mail" class="text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Email Us</h3>
+                                    <p class="text-gray-600">For general inquiries</p>
+                                    <a href="mailto:info@proecoconnect.com" class="text-green-600 hover:underline">info@proecoconnect.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card bg-gray-50 p-6 rounded-lg transition-all duration-300">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i data-feather="phone" class="text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Call Us</h3>
+                                    <p class="text-gray-600">For immediate assistance</p>
+                                    <a href="tel:+27800005555" class="text-green-600 hover:underline">+27 800 005 555</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card bg-gray-50 p-6 rounded-lg transition-all duration-300">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i data-feather="map-pin" class="text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Visit Us</h3>
+                                    <p class="text-gray-600">Our headquarters</p>
+                                    <address class="not-italic text-green-600">
+                                        123 Farm Lane, Agricultural Hub<br>
+                                        Johannesburg, 2000<br>
+                                        South Africa
+                                    </address>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card bg-gray-50 p-6 rounded-lg transition-all duration-300">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i data-feather="clock" class="text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Business Hours</h3>
+                                    <p class="text-gray-600">We're here when you need us</p>
+                                    <div class="text-green-600">
+                                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                        <p>Saturday: 9:00 AM - 1:00 PM</p>
+                                        <p>Sunday: Closed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="font-bold text-lg mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-600 p-3 rounded-full transition-colors duration-300">
+                                <i data-feather="facebook"></i>
+                            </a>
+                            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-600 p-3 rounded-full transition-colors duration-300">
+                                <i data-feather="twitter"></i>
+                            </a>
+                            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-600 p-3 rounded-full transition-colors duration-300">
+                                <i data-feather="instagram"></i>
+                            </a>
+                            <a href="#" class="bg-green-100 hover:bg-green-200 text-green-600 p-3 rounded-full transition-colors duration-300">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Quick answers to common questions about Pro Eco-Connect</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                        <span class="font-medium text-left">How do I sign up as a farmer?</span>
+                        <i data-feather="chevron-down" class="text-green-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-4 bg-gray-50">
+                        <p class="text-gray-600">Signing up is easy! Visit our Farmers page and click "Sign Up as Farmer". You'll need to provide basic information about your farm, products, and location. Our team will review your application and get back to you within 2 business days.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                        <span class="font-medium text-left">What are the fees for using Pro Eco-Connect?</span>
+                        <i data-feather="chevron-down" class="text-green-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-4 bg-gray-50">
+                        <p class="text-gray-600">For farmers, we charge a small commission only when you make a sale (typically 5-10%, depending on your subscription plan). Buyers can browse for free and only pay for the products they purchase. No hidden fees!</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                        <span class="font-medium text-left">How does delivery work?</span>
+                        <i data-feather="chevron-down" class="text-green-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-4 bg-gray-50">
+                        <p class="text-gray-600">Delivery arrangements are made directly between farmers and buyers. Many farmers offer delivery within a certain radius, while others may require pickup. Our platform helps coordinate logistics but doesn't handle delivery directly.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                        <span class="font-medium text-left">Can I schedule regular orders?</span>
+                        <i data-feather="chevron-down" class="text-green-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-4 bg-gray-50">
+                        <p class="text-gray-600">Absolutely! Many of
+</body>
+</html>
