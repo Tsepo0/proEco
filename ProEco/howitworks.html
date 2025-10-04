@@ -48,7 +48,7 @@
                 <a href="signin.html" class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-2 px-4 rounded-full flex items-center">
                     <i data-feather="user" class="mr-1"></i> Sign In
                 </a>
-                <button class="md:hidden focus:outline-none">
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
                     <i data-feather="menu"></i>
                 </button>
             </div>
@@ -403,8 +403,7 @@
             once: true
         });
         feather.replace();
-    </script>
-
+    
     // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const navLinks = document.querySelector('.hidden.md\\:flex.space-x-6');
