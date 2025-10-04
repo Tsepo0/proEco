@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Pro Eco-Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .service-hero {
+            background-image: url('http://static.photos/agriculture/1200x630/15');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 128, 0, 0.1);
+        }
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            color: #065f46;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-green-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="map-pin" class="text-yellow-300"></i>
+                <a href="index.html" class="text-xl font-bold">Pro Eco-Connect</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-yellow-300">Home</a>
+                <a href="about.html" class="hover:text-yellow-300">About Us</a>
+                <a href="services.html" class="text-yellow-300">Services</a>
+                <a href="farmers.html" class="hover:text-yellow-300">Farmers</a>
+                <a href="index.html#consumers" class="hover:text-yellow-300">Consumers</a>
+                <a href="contact.html" class="hover:text-yellow-300">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="signin.html" class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-2 px-4 rounded-full flex items-center">
+                    <i data-feather="user" class="mr-1"></i> Sign In
+                </a>
+                <button class="md:hidden focus:outline-none">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-hero text-white py-32 relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Services</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">Comprehensive solutions to connect farmers and consumers sustainably</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What We Offer</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From farm to table, we provide the tools and platform to make sustainable agriculture accessible</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <i data-feather="shopping-cart" class="service-icon text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Digital Marketplace</h3>
+                    <p class="text-gray-600 mb-4">Our online platform connects farmers directly with consumers, restaurants, and retailers.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Real-time inventory management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Secure payment processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Order tracking system</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <i data-feather="truck" class="service-icon text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Logistics Coordination</h3>
+                    <p class="text-gray-600 mb-4">We help optimize delivery routes and connect farmers with transport partners.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Route optimization tools</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Cold chain solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Batch delivery coordination</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <i data-feather="bar-chart" class="service-icon text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Market Analytics</h3>
+                    <p class="text-gray-600 mb-4">Data-driven insights to help farmers understand market trends and consumer demand.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Demand forecasting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Price optimization tools</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Seasonal trend analysis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <i data-feather="book" class="service-icon text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Farmer Education</h3>
+                    <p class="text-gray-600 mb-4">Training programs and resources for sustainable farming practices.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Organic certification guidance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Water conservation techniques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Soil health management</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <i data-feather="credit-card" class="service-icon text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Financial Services</h3>
+                    <p class="text-gray-600 mb-4">Financial solutions tailored for small and medium-scale farmers.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Microloan facilitation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Equipment financing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Crop insurance options</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card bg-gray-50 p-8 rounded-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <i data-feather="users" class="service-icon text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Community Building</h3>
+                    <p class="text-gray-600 mb-4">Networking and knowledge sharing among our farming community.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Farmer mentorship programs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Local networking events</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                            <span>Cooperative development support</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Choose the plan that works for your farm or business</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-right">
+                    <div class="bg-green-100 px-6 py-4">
+                        <h3 class="text-xl font-bold text-green-800">Basic</h3>
+                        <p class="text-gray-600">For small farms starting out</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-800">5%</span>
+                            <span class="text-gray-600">commission</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Up to 5 product listings</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Basic analytics dashboard</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Email support</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="x" class="text-gray-300 mr-2 mt-1 w-4 h-4"></i>
+                                <span class="text-gray-400">No premium features</span>
+                            </li>
+                        </ul>
+                        <a href="signin.html" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform scale-105 z-10" data-aos="fade-up">
+                    <div class="bg-green-600 text-white px-6 py-4">
+                        <h3 class="text-xl font-bold">Pro</h3>
+                        <p>Most popular for growing farms</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-800">8%</span>
+                            <span class="text-gray-600">commission</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Up to 20 product listings</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Advanced analytics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Priority support</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Marketing tools</span>
+                            </li>
+                        </ul>
+                        <a href="signin.html" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-left">
+                    <div class="bg-green-800 text-white px-6 py-4">
+                        <h3 class="text-xl font-bold">Enterprise</h3>
+                        <p>For large farms and cooperatives</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-800">10%</span>
+                            <span class="text-gray-600">commission</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Unlimited product listings</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Premium analytics suite</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-feather="check" class="text-green-500 mr-2 mt-1 w-4 h-4"></i>
+                                <span>Custom integrations</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-green-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Not Sure Which Plan is Right?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Our team can help you choose the best option for your specific needs.</p>
+            <a href="contact.html" class="inline-block bg-white text-green-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg">
+                Get Personalized Advice
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-feather="map-pin" class="text-yellow-300 mr-2"></i> Pro Eco-Connect
+                    </h3>
+                    <p class="text-gray-400 mb-4">Connecting sustainable farming solutions since 2023.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Farmers</h4>
+                    <ul class="space-y-2">
+                        <li><a href="farmers.html" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Farmer Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Buyers</h4>
+                    <ul class="space-y-2">
+                        <li><a href="farmers.html" class="text-gray-400 hover:text-white">Find Farms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bulk Ordering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Delivery Options</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Quality Standards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400"><i data-feather="mail" class="mr-2 w-4 h-4"></i> info@proecoconnect.com</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="phone" class="mr-2 w-4 h-4"></i> (800) 555-1234</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="map" class="mr-2 w-4 h-4"></i> Johannesburg, South Africa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Pro Eco-Connect. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="contact.html" class="text-gray-400 hover:text-white text-sm">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
