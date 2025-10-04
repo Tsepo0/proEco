@@ -44,13 +44,13 @@
                 <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
                     <a href="index.html" class="text-gray-500 hover:text-gray-700">Home</a>
                     <a href="about.html" class="text-green-600 font-medium">About</a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700">Services</a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700">Farmers</a>
-                    <a href="#" class="text-gray-500 hover:text-gray-700">Consumers</a>
-                    <a href="#" class="px-4 py-2 rounded-md text-white bg-green-600 hover:bg-green-700">Get Started</a>
+                    <a href="howitworks.html" class="text-gray-500 hover:text-gray-700">How It Works</a>
+                    <a href="farmers.html" class="text-gray-500 hover:text-gray-700">Farmers</a>
+                    <a href="consumers.html" class="text-gray-500 hover:text-gray-700">Consumers</a>
+                    <a href="signin.html" class="px-4 py-2 rounded-md text-white bg-green-600 hover:bg-green-700">Get Started</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button class="text-gray-500 hover:text-gray-700">
+                    <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700">
                         <i data-feather="menu"></i>
                     </button>
                 </div>
@@ -459,6 +459,24 @@
 
         // Initialize Feather Icons
         feather.replace();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const navLinks = document.querySelector('.hidden.md\\:flex.space-x-6');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-16');
+            navLinks.classList.toggle('right-4');
+            navLinks.classList.toggle('bg-green-800');
+            navLinks.classList.toggle('p-4');
+            navLinks.classList.toggle('rounded-lg');
+            navLinks.classList.toggle('shadow-lg');
+            navLinks.classList.toggle('gap-4');
+        });
     </script>
 </body>
 </html>
