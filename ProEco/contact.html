@@ -252,6 +252,120 @@
                         <i data-feather="chevron-down" class="text-green-600 transition-transform duration-300"></i>
                     </button>
                     <div class="hidden p-4 bg-gray-50">
-                        <p class="text-gray-600">Absolutely! Many of
+                        <p class="text-gray-600">Absolutely! Many of our buyers set up standing orders with their favorite farmers. You can specify delivery frequency (weekly, bi-weekly, etc.) and easily manage your orders through your account dashboard.</p>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg overflow-hidden" data-aos="fade-up">
+                    <button class="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                        <span class="font-medium text-left">What safety measures are in place for transactions?</span>
+                        <i data-feather="chevron-down" class="text-green-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-4 bg-gray-50">
+                        <p class="text-gray-600">We use secure payment processing with encryption for all transactions. Our platform also includes farmer verification, buyer reviews, and dispute resolution services to ensure safe and fair transactions for all parties.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-4">Still have questions?</p>
+                <a href="#contact-form" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg">
+                    Contact Our Support Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-feather="map-pin" class="text-yellow-300 mr-2"></i> Pro Eco-Connect
+                    </h3>
+                    <p class="text-gray-400 mb-4">Connecting sustainable farming solutions since 2024.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Farmers</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Farmer Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Buyers</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Find Farms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bulk Ordering</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Delivery Options</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Quality Standards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400"><i data-feather="mail" class="mr-2 w-4 h-4"></i> info@proecoconnect.com</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="phone" class="mr-2 w-4 h-4"></i> (800) 555-1234</li>
+                        <li class="flex items-center text-gray-400"><i data-feather="map" class="mr-2 w-4 h-4"></i> Johannesburg South Africa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Pro Eco-Connect. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+        
+        // FAQ accordion functionality
+        document.querySelectorAll('.border button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle content visibility
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+        
+        // Floating label functionality
+        document.querySelectorAll('.floating-input input, .floating-input textarea').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentNode.classList.add('input-focused');
+            });
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    input.parentNode.classList.remove('input-focused');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
